@@ -1,0 +1,29 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+{#    引入bootstrap样式#}
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+{#    加载动画按钮的那个文件#}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+
+    <script src="{{ url_for('static',filename='ad_post.js') }}"></script>
+</head>
+<body>
+<div style="padding-left: 500px">
+    <div id="demo">
+        <div v-for="post in main">
+            <ul>
+                <li>[[post.title]]<br>
+                    [[post.content]]
+                </li>
+            </ul>
+        </div>
+            <button v-on:click="loadMore" id="loadmore" style="width: 200px;">点击加载更多</button>
+            <button class="ui loading button" style="width:200px;display: none" id="loading">加载</button>
+    </div>
+</div>
+
+</body>
+</html>
